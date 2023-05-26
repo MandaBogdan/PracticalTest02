@@ -1,2 +1,2 @@
 # PracticalTest02
-Manda Bogdan florin 342C1
+Manda Bogdan Florin 342C1
