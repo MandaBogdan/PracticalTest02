@@ -24,8 +24,8 @@ public class PracticalTest02MainActivity extends AppCompatActivity {
 
     TextView resultTextView = null;
 
-    EditText keyEditText = null;
-    EditText valueEditText = null;
+    EditText op1EditText = null;
+    EditText op2EditText = null;
 
     Spinner operationSpinner = null;
 
@@ -44,9 +44,8 @@ public class PracticalTest02MainActivity extends AppCompatActivity {
 
         resultTextView = findViewById(R.id.result_text_view);
 
-        keyEditText = findViewById(R.id.key_edit_text);
-        valueEditText = findViewById(R.id.value_edit_text);
-
+        op1EditText = findViewById(R.id.op1_edit_text);
+        op2EditText = findViewById(R.id.op2_edit_text);
         operationSpinner = findViewById(R.id.operation);
 
         serverConnectButton.setOnClickListener(new View.OnClickListener() {
@@ -77,11 +76,11 @@ public class PracticalTest02MainActivity extends AppCompatActivity {
                 String serverPort = clientPortEditText.getText().toString();
 
                 String operation = operationSpinner.getSelectedItem().toString();
-                String key = keyEditText.getText().toString();
-                String value = valueEditText.getText().toString();
+                String op1 = op1EditText.getText().toString();
+                String op2 = op2EditText.getText().toString();
 
-                if (key.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "[MAIN ACTIVITY] Key should be filled!", Toast.LENGTH_SHORT).show();
+                if (op1.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "[MAIN ACTIVITY] OP1 should be filled!", Toast.LENGTH_SHORT).show();
 
                     return;
                 }
@@ -104,8 +103,8 @@ public class PracticalTest02MainActivity extends AppCompatActivity {
                         serverAddress,
                         Integer.parseInt(serverPort),
                         operation,
-                        key,
-                        value,
+                        op1,
+                        op2,
                         resultTextView);
 
                 clientThread.start();

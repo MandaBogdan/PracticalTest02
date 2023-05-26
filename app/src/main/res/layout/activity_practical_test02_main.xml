@@ -90,13 +90,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/key"
-        android:id="@+id/key_edit_text"/>
+        android:id="@+id/op1_edit_text"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/value"
-        android:id="@+id/value_edit_text"/>
+        android:id="@+id/op2_edit_text"/>
 
     <Button
         android:layout_width="match_parent"

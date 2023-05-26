@@ -12,21 +12,18 @@ public class ClientThread extends Thread{
 
     String serverAddress;
     int serverPort;
-
     Socket socket;
-
     String operation;
-    String key;
-    String value;
-
+    String op1;
+    String op2;
     TextView resultTextView;
 
-    public ClientThread(String serverAddress, int serverPort, String operation, String key, String value, TextView resultTextView) {
+    public ClientThread(String serverAddress, int serverPort, String operation, String op1, String op2, TextView resultTextView) {
         this.serverAddress = serverAddress;
         this.serverPort = serverPort;
         this.operation = operation;
-        this.key = key;
-        this.value = value;
+        this.op1 = op1;
+        this.op2 = op2;
         this.resultTextView = resultTextView;
     }
 
@@ -40,16 +37,7 @@ public class ClientThread extends Thread{
             // gets the reader and writer for the socket
             BufferedReader bufferedReader = Utilities.getReader(socket);
             PrintWriter printWriter = Utilities.getWriter(socket);
-
-            // sends request
-
-            if (operation.equals("add")) {
-                printWriter.println(operation + "," + key + "," + value);
-            }
-
-            if (operation.equals("mul")) {
-                printWriter.println(operation + "," + key + "," + value);
-            }
+            printWriter.println(operation + "," + op1 + "," + op2);
 
             String response;
 
